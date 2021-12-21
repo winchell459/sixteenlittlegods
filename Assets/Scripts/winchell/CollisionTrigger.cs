@@ -8,6 +8,10 @@ namespace winchell
     {
         [SerializeField] private string defaultMessage = "Defualt Message";
 
+        private void Start()
+        {
+            
+        }
         private string message
         {
             get
@@ -18,7 +22,7 @@ namespace winchell
             }
         }
 
-        private void OnTriggerEnter2D(Collider2D collision)
+        public void OnTriggerEnter2D(Collider2D collision)
         {
             displayMessage(message);
         }
@@ -33,11 +37,11 @@ namespace winchell
             if (collision.gameObject.CompareTag("Player")) handlePlayerTagCollisionExit(collision);
         }
 
-        private void handlePlayerTagCollision(Collision2D collision)
+        protected virtual void handlePlayerTagCollision(Collision2D collision)
         {
             displayMessage(message);
         }
-        private void displayMessage(string message)
+        protected void displayMessage(string message)
         {
             Debug.Log(message);
             FindObjectOfType<DisplayHandler>().DisplayMessage(message);
