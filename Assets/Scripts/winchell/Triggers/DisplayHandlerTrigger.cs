@@ -4,14 +4,13 @@ using UnityEngine;
 
 namespace winchell
 {
-    public class CollisionTrigger : MonoBehaviour
+    public class DisplayHandlerTrigger : CollisionTrigger
     {
         [SerializeField] private string defaultMessage = "Defualt Message";
 
-        private void Start()
-        {
-            
-        }
+        protected static bool messaging = false;
+        public static bool Messaging { get { return messaging; } }
+
         private string message
         {
             get
@@ -22,38 +21,33 @@ namespace winchell
             }
         }
 
-        public void OnTriggerEnter2D(Collider2D collision)
+        // Start is called before the first frame update
+        void Start()
+        {
+
+        }
+
+
+        protected override void handlePlayerTagCollisionEnter(Collision2D collision)
         {
             displayMessage(message);
         }
-
-        private void OnCollisionEnter2D(Collision2D collision)
+        protected override void handlePlayerTagCollisionExit(Collision2D collision)
         {
-            if (collision.gameObject.CompareTag("Player")) handlePlayerTagCollision(collision);
+            displayClose();
         }
 
-        private void OnCollisionExit2D(Collision2D collision)
-        {
-            if (collision.gameObject.CompareTag("Player")) handlePlayerTagCollisionExit(collision);
-        }
-
-        protected virtual void handlePlayerTagCollision(Collision2D collision)
-        {
-            displayMessage(message);
-        }
         protected void displayMessage(string message)
         {
             Debug.Log(message);
             FindObjectOfType<DisplayHandler>().DisplayMessage(message);
         }
-        private void displayClose()
+        protected void displayClose()
         {
             FindObjectOfType<DisplayHandler>().CloseDisplay();
         }
 
-        private void handlePlayerTagCollisionExit(Collision2D collision)
-        {
-            displayClose();
-        }
+        
     }
 }
+

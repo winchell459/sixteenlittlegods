@@ -25,6 +25,10 @@ public class PlayerController : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         Vector2 velocity = movementSpeed * new Vector2(horizontal, vertical).normalized;
+        if (CollisionTrigger.Messaging)
+        {
+            velocity = Vector2.zero;
+        }
         rb.velocity = velocity;
         anim.SetFloat("velocity", velocity.magnitude);
     }

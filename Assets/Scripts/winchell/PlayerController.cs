@@ -19,6 +19,7 @@ namespace winchell
         // Update is called once per frame
         void Update()
         {
+
             handleUserInput();
         }
 
@@ -31,7 +32,13 @@ namespace winchell
         {
             float horizontal = Input.GetAxis("Horizontal");
             float vertical = Input.GetAxis("Vertical");
-            rb.velocity = (new Vector2(horizontal, vertical)).normalized * movementSpeed;
+            Vector2 velocity = (new Vector2(horizontal, vertical)).normalized * movementSpeed;
+            if (DisplayHandlerTrigger.Messaging)
+            {
+                velocity = Vector2.zero;
+            }
+           
+            rb.velocity = velocity;
             anim.SetFloat("velocity", rb.velocity.magnitude);
         }
     }
