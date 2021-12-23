@@ -15,7 +15,18 @@ namespace winchell
 
         protected override bool messageEnd()
         {
-            return messageIndex < Messages2.Length;
+            return messageIndex < Messages2.Length && Messages2[Messages2.Length-1].messageEnd();
+        }
+
+        protected override void messageIncrement()
+        {
+            base.messageIncrement();
+        }
+
+        protected override void messageStart()
+        {
+            Messages2[messageIndex].messageStart();
+            //displayMessage(message);
         }
     }
 }

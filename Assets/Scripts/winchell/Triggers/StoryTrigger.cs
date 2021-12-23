@@ -7,6 +7,7 @@ namespace winchell
     public class StoryTrigger : DisplayHandlerTrigger
     {
         [SerializeField] private string[] Messages;
+        private bool messageComplete = true;
         protected int messageIndex = 0;
         protected new string message
         {
@@ -26,16 +27,28 @@ namespace winchell
         {
             return messageIndex < Messages.Length;
         }
-        private bool messageComplete = true;
+        virtual protected void messageIncrement()
+        {
+            messageIndex += 1;
+        }
+        virtual protected void messageStart()
+        {
+
+            messageIndex = 0;
+            
+        }
+        
         protected override void handlePlayerTagCollisionEnter(Collision2D collision)
         {
             if (messageComplete)
             {
-                messageIndex = 0;
+                Debug.Log("StoryTrigger " + gameObject.name);
+
+                
                 messaging = true;
                 messageComplete = false;
+                messageStart();
                 displayMessage(message);
-                
             }
             
         }
@@ -46,7 +59,7 @@ namespace winchell
             {
                 if (Input.anyKeyDown)
                 {
-                    messageIndex += 1;
+                    messageIncrement();
                     if(messageEnd())
                     {
                         displayMessage(message);

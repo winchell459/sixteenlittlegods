@@ -9,6 +9,9 @@ namespace winchell
 
         public string message { get { return getMessage(); } }
         protected abstract string getMessage();
+        public abstract void messageIncrement();
+        public abstract bool messageEnd();
+        public abstract void messageStart();
     }
 
     
