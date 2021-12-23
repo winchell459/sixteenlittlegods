@@ -6,16 +6,16 @@ namespace winchell
 {
     public class DisplayHandlerTrigger : CollisionTrigger
     {
-        [SerializeField] private string defaultMessage = "Defualt Message";
+        [SerializeField] protected string defaultMessage = "Defualt Message";
 
         protected static bool messaging = false;
         public static bool Messaging { get { return messaging; } }
 
-        private string message
+        protected string message
         {
             get
             {
-                string storyMessage = FindObjectOfType<StoryHandler>().GetMessage(this);
+                string storyMessage = FindObjectOfType<StoryHandler>().GetMessage<string>(this);
                 if (storyMessage == "Default Message") return defaultMessage;
                 else return storyMessage;
             }
