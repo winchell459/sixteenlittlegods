@@ -4,18 +4,18 @@ using UnityEngine;
 
 namespace winchell
 {
-    public class Problem : MonoBehaviour
+    [System.Serializable]
+    public class Problem : Quest
     {
-        // Start is called before the first frame update
-        void Start()
+        public int operand1, operand2;
+        public Operators oper;
+            
+        public enum Operators
         {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
+           add,
+           sub,
+           mult,
+           div
         }
     }
 }

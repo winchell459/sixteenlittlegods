@@ -9,8 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a418511ba17f0f240b2811dc3f2269e6, type: 3}
-  m_Name: Hello There
+  m_Script: {fileID: 11500000, guid: cc9db0ac3b1152f4fbcea5abe43bb205, type: 3}
+  m_Name: Problem
   m_EditorClassIdentifier: 
-  text:
-  - Hello There
+  quest:
+    _questName: Test problem 1
+    _questID: 1
+    _completed: 0
+    operand1: 5
+    operand2: 4
+    oper: 2

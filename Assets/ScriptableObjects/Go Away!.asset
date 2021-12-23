@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a418511ba17f0f240b2811dc3f2269e6, type: 3}
   m_Name: Go Away!
   m_EditorClassIdentifier: 
-  text: Go Away
+  text:
+  - Go Away!

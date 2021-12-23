@@ -25,7 +25,7 @@ namespace winchell
         }
         virtual protected bool messageEnd()
         {
-            return messageIndex < Messages.Length;
+            return messageIndex >= Messages.Length;
         }
         virtual protected void messageIncrement()
         {
@@ -60,7 +60,7 @@ namespace winchell
                 if (Input.anyKeyDown)
                 {
                     messageIncrement();
-                    if(messageEnd())
+                    if(!messageEnd())
                     {
                         displayMessage(message);
                     }

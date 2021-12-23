@@ -250,6 +250,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5a49012364858e4429f1b03605e8a1bc, type: 2}
   - {fileID: 11400000, guid: 3a2275d89351334469658368adbb2833, type: 2}
   - {fileID: 11400000, guid: 9146d908f0e7f214380d5fa21c68f006, type: 2}
+  - {fileID: 11400000, guid: e61764d05398eb844a5663b2b04b8b0b, type: 2}
 --- !u!1 &93365145
 GameObject:
   m_ObjectHideFlags: 0
@@ -2135,7 +2136,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1580179726}
   - component: {fileID: 1580179725}
-  - component: {fileID: 1580179724}
   - component: {fileID: 1580179727}
   m_Layer: 0
   m_Name: trigger (1)
@@ -2144,18 +2144,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1580179724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1580179723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9838f7bbf84abd4fb68e6d732860470, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1580179725
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -7,8 +7,8 @@ namespace winchell
     [CreateAssetMenu(fileName = "MessageText", menuName = "ScriptableObject/Message/MessageText")]
     public class MessageText : Message
     {
-        [SerializeField] string[] text;
-        private int messageIndex = 0;
+        [SerializeField] protected string[] text;
+        protected int messageIndex = 0;
         protected override string getMessage()
         {
             string message = text[messageIndex];

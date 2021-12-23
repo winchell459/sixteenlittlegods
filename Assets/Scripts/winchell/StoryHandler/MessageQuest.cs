@@ -5,25 +5,76 @@ using UnityEngine;
 namespace winchell
 {
     [CreateAssetMenu(fileName = "MessageQuest", menuName = "ScriptableObject/Message/MessageQuest")]
-    public abstract class MessageQuest : Message
+    public abstract class MessageQuest : MessageText
     {
-        [SerializeField] Quest quest;
+        [SerializeField] private QuestScriptableObject questScriptable;
+        [SerializeField] protected Quest quest { get { return questScriptable.quest; } }
+        [SerializeField] protected QuestKeys questKeys;
         protected override string getMessage()
         {
+
             return quest.text;
         }
-        public override bool messageEnd()
+        
+
+        protected string translateKeys(string message)
         {
-            throw new System.NotImplementedException();
+            foreach(QuestKey key in questKeys.mapObjects)
+            {
+                while (message.Contains(key.key))
+                {
+                    message = message.Replace(key.key, key.obj);
+                }
+            }
+            return message;
         }
 
-        public override void messageStart()
-        {
-            throw new System.NotImplementedException();
-        }
-        public override void messageIncrement()
-        {
+    }
 
+    [System.Serializable]
+    public class QuestKeys
+    {
+        public List<QuestKey> mapObjects;
+        public string this[string key]
+        {
+            get => FindObject(key);
+            set => SetObject(key, value);
+        }
+        string FindObject(string key)
+        {
+            string obj = default;
+            foreach (QuestKey mapObject in mapObjects)
+            {
+                if (key == mapObject.key) obj = mapObject.obj;
+            }
+            return obj;
+        }
+
+        void SetObject(string key, string value)
+        {
+            
+            foreach (QuestKey mapObject in mapObjects)
+            {
+                if (key == mapObject.key)
+                {
+                    //mapObjects.Add(new QuestKey(key, value));
+                    mapObject.obj = value;
+                }
+            }
+            
+        }
+    }
+
+    [System.Serializable]
+    public class QuestKey
+    {
+        public string key;
+        public string obj;
+
+        public QuestKey(string key, string obj)
+        {
+            this.key = key;
+            this.obj = obj;
         }
     }
 }
