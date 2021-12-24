@@ -24,17 +24,27 @@ public class CollisionTrigger : MonoBehaviour
         if (collision.transform.CompareTag("Player")) displayClose();
     }
 
-    private void handlePlayerTagCollisionEnter(Collision2D collision)
+    virtual protected void handlePlayerTagCollisionEnter(Collision2D collision)
     {
-        if (messageComplete)
+        if (message.Length > 0 && messageComplete)
         {
             messageIndex = 0;
             messaging = true;
             messageComplete = false;
             displayMessage(message[messageIndex]);
         }
+        else
+        {
+            exitMessage();
+        }
     }
 
+    virtual protected void exitMessage()
+    {
+        messaging = false;
+        displayClose();
+        messageComplete = true;
+    }
     private void Update()
     {
         if (!messageComplete)
@@ -48,13 +58,13 @@ public class CollisionTrigger : MonoBehaviour
                 }
                 else
                 {
-                    messaging = false;
-                    displayClose();
-                    messageComplete = true;
+                    exitMessage();
                 }
             }
         }
     }
+
+
 
 
     private void displayMessage(string message)

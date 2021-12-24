@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SceneLoadTrigger : MonoBehaviour
+public class SceneLoadTrigger : CollisionTrigger
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private string sceneName;
+    public bool Active;
+    
+
+    protected override void exitMessage()
     {
-        
+        base.exitMessage();
+        loadScene();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void loadScene()
     {
-        
+        if (Active) UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
     }
 }
