@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00acaca210ab2f04ab92f9e65ce07785, type: 3}
+  m_Name: SLT_Tree_NoMessage_ExitCal_Active
+  m_EditorClassIdentifier: 
+  _active: 1
+  _message: <exit to cal>
+  quest: {fileID: 0}
+  activeOnStates: 
+  sceneName: Cal_winchell

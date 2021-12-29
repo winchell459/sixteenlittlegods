@@ -29,4 +29,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DebugQuestSystem.unity
     guid: 4d31118eb1a90384bb407ef0aa629769
+  - enabled: 1
+    path: Assets/Scenes/Scenes_winchell/Village_winchell.unity
+    guid: 484309134e0eb5b4a885267784ee6916
+  - enabled: 1
+    path: Assets/Scenes/Scenes_winchell/Cal_winchell.unity
+    guid: c29f3ecf08ee7ca4fb943a79f57e1d4f
+  - enabled: 1
+    path: Assets/Scenes/Scenes_winchell/Temple_winchell.unity
+    guid: 543cc968f13a3e24fb3b64c833a212a5
+  - enabled: 1
+    path: Assets/Scenes/Scenes_winchell/CatHeaven_winchell.unity
+    guid: bb90395125efdcd4d9cbde55a269bc99
   m_configObjects: {}
