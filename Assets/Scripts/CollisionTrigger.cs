@@ -9,7 +9,7 @@ public class CollisionTrigger : MonoBehaviour
     private static bool messaging = false;
     public static bool Messaging { get { return messaging; } }
 
-    [SerializeField] private string[] message;
+    [SerializeField] private Message[] message;
     private int messageIndex = 0;
     private bool messageComplete = true;
 
@@ -31,7 +31,7 @@ public class CollisionTrigger : MonoBehaviour
             messageIndex = 0;
             messaging = true;
             messageComplete = false;
-            displayMessage(message[messageIndex]);
+            displayMessage(getNextMessage());
         }
         else
         {
@@ -44,6 +44,7 @@ public class CollisionTrigger : MonoBehaviour
         messaging = false;
         displayClose();
         messageComplete = true;
+        message[messageIndex].ExitMessage();
     }
     private void Update()
     {
@@ -51,10 +52,11 @@ public class CollisionTrigger : MonoBehaviour
         {
             if (Input.anyKeyDown)
             {
-                messageIndex += 1;
-                if(messageIndex < message.Length)
+                
+                if(hasNextMessage())
                 {
-                    displayMessage(message[messageIndex]);
+                    messageIndex += 1;
+                    displayMessage(getNextMessage());
                 }
                 else
                 {
@@ -64,7 +66,25 @@ public class CollisionTrigger : MonoBehaviour
         }
     }
 
+    protected string getNextMessage()
+    {
+        while (!message[messageIndex].active)
+        {
+            messageIndex += 1;
+        }
+        return message[messageIndex].message;
+    }
 
+    protected bool hasNextMessage()
+    {
+        int nextIndex = messageIndex + 1;
+        while(nextIndex < message.Length)
+        {
+            if (message[nextIndex].active) return true;
+            else nextIndex += 1;
+        }
+        return false;
+    }
 
 
     private void displayMessage(string message)

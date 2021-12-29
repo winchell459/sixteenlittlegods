@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DebugDisplayTextScene.unity
     guid: adeb1abccdf5c10418cf168678d99ed5
+  - enabled: 1
+    path: Assets/Scenes/DebugQuestSystem.unity
+    guid: 4d31118eb1a90384bb407ef0aa629769
   m_configObjects: {}

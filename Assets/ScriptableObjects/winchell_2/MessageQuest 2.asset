@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f40f869e6c5e5c244aad70dad1541a53, type: 3}
+  m_Name: MessageQuest 2
+  m_EditorClassIdentifier: 
+  _active: 0
+  _message: See you later!
+  quest: {fileID: 11400000, guid: 1bd771a6ec553a740a9268c49910d2bf, type: 2}
+  activeOnStates: 01000000
+  triggerOnStates: 01000000
+  triggerQuest: {fileID: 11400000, guid: 1d6febc9257846f438ae33ed705b67a6, type: 2}
+  triggerState: 1
