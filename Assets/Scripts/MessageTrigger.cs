@@ -11,7 +11,7 @@ public class MessageTrigger : MessageQuest
 
     protected override string getMessage()
     {
-        if (checkOnStates(triggerOnStates))
+        if (_active || checkOnStates(triggerOnStates))
         {
             triggerQuest.State = triggerState;
         }

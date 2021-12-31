@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
-    private string GameSceneName = "Game", CreditsSceneName = "Credits", SettingsSceneName = "Settings";
+    [SerializeField] private string GameSceneName = "Game", CreditsSceneName = "Credits", SettingsSceneName = "Settings";
 
     public void StartGameButton()
     {
