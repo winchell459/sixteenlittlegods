@@ -659,6 +659,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bb548af68fce7547a8739be73a52763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameSceneName: Village_winchell
+  CreditsSceneName: Credits
+  SettingsSceneName: Settings
+  QH: {fileID: 11400000, guid: ca06acb046dc5b24e88075b29f43d81f, type: 2}
 --- !u!4 &1656748068
 Transform:
   m_ObjectHideFlags: 0

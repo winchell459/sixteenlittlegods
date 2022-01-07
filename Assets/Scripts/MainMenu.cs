@@ -5,9 +5,10 @@ using UnityEngine;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private string GameSceneName = "Game", CreditsSceneName = "Credits", SettingsSceneName = "Settings";
-
+    public QuestHandler QH;
     public void StartGameButton()
     {
+        QH.ResetQuests();
         LoadScene(GameSceneName);
     }
 
