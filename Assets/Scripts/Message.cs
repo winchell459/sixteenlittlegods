@@ -6,13 +6,15 @@ using UnityEngine;
 public class Message : ScriptableObject
 {
     [SerializeField] protected bool _active;
-    [SerializeField] protected string _message;
+    [SerializeField] [TextArea] protected string _message;
 
     public bool active { get { return getActive(); } }
     public string message { get { return getMessage(); } }
 
+    
     virtual protected bool getActive()
     {
+        
         return _active;
     }
 

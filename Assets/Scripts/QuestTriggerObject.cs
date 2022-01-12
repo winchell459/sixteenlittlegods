@@ -12,6 +12,7 @@ public class QuestTriggerObject : MonoBehaviour
     [SerializeField] private Quest.QuestState[] triggerOnStates;
 
     [SerializeField] private bool destroyOnTriggered;
+    [SerializeField] private InventoryObject objectNeeded;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +24,7 @@ public class QuestTriggerObject : MonoBehaviour
     {
         if (collision.transform.CompareTag("Player"))
         {
-            if(checkOnStates(triggerOnStates))
+            if(checkOnStates(triggerOnStates) && FindObjectOfType<Inventory>().hasObject(objectNeeded))
             {
                 triggerQuest.State = triggerState;
                 destroyCheck();
