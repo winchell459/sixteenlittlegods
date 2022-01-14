@@ -1431,6 +1431,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stick Figure Guy
       objectReference: {fileID: 0}
+    - target: {fileID: 902099592250927708, guid: 6f56925d7878a54498906aeb2ca1ac35, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 4830029619328612877, guid: 75ccacb5d0692a742b68c22782790e38, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f56925d7878a54498906aeb2ca1ac35, type: 3}
 --- !u!1 &774528589
